@@ -33,5 +33,5 @@
 
     - service:
         name: autofs
-        state: start
+        state: started
         enabled: yes
