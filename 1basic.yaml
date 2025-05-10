@@ -28,10 +28,10 @@
         uid: 5000
 
     - yum:
-        name: autofs
+        name: httpd
         state: present
 
     - service:
-        name: autofs
+        name: httpd
         state: started
         enabled: yes
