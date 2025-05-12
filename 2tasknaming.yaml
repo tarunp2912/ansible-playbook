@@ -6,13 +6,13 @@
       file:
         path: /tmp/jkl
         state: directory
-        mode: 777
+        mode: '0777'
 
     - name: copy /etc/fstab to /tmp/cpfstap
       copy:
         src: /etc/fstab
         dest: /tmp/cpfstap
-        mode: 777
+        mode: '0777'
         owner: manage
         group: root
 
@@ -20,7 +20,7 @@
       file:
         path: /var/jkl.txt
         state: touch
-        mode: 777
+        mode: '0777'
     
     - name: copy /etc/fstab to /var/cpfstab
       copy:
