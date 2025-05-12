@@ -1,6 +1,6 @@
 ---
 - hosts:
-    - 172.31.14.90
+    - 172.31.0.228
   tasks: 
     - name: creating directory /tmp/jkl
       file:
@@ -12,7 +12,7 @@
       copy:
         src: /etc/fstab
         dest: /tmp/cpfstap
-        mode: 7000
+        mode: 777
         owner: manage
         group: root
 
@@ -20,7 +20,7 @@
       file:
         path: /var/jkl.txt
         state: touch
-        mode: 444
+        mode: 777
     
     - name: copy /etc/fstab to /var/cpfstab
       copy:
@@ -31,7 +31,7 @@
       user:   
         name: panchal
         state: present
-        uid: 1500
+        uid: 2100
 
     - name: installing autofs package
       yum:  
