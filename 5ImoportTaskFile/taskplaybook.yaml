@@ -8,5 +8,6 @@
         dest: /tmp/vsfstab
         mode: '0444'
 
-    - name: import task from /home/controller/ansible-playbook/5ImportTaskFile/taskplay.yaml
-      import_tasks: /home/controller/ansible-playbook/5ImportTaskFile/taskplay.yaml
+    - name: import task from /home/controller/ansible-playbook/5ImportTaskFile/onlytask.yaml
+      import_tasks: /home/controller/ansible-playbook/5ImportTaskFile/onlytask.yaml
+      
