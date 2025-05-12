@@ -12,6 +12,6 @@
 
 - name: creting shared directory in /tmp/vsftpd.txt
   file:
-    path: /tmp/vsftpd.txt
+    path: /tmp/vsftpddir
     state: directory
     mode: '0777'
