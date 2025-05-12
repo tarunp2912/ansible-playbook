@@ -1,0 +1,22 @@
+---
+- name: testing basic playbook with playbook level naming with install and start apache2
+  hosts:  
+    - 172.31.14.90    
+  tasks:  
+    - name: creatinf file in /tmp/apahce2
+      file:
+        path: /tmp/apache2
+        state: touch
+        mode: '0755'
+        owner: manage
+      
+    - name: installing apache2 package
+      yum:  
+        name: apache2
+        state: present
+      
+    - name: starting the apache2 service
+      service: 
+        name: apache2
+        state: started
+        enabled: yes
