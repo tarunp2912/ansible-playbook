@@ -1,0 +1,40 @@
+---
+- name: single playbook with multiple tasks
+  hosts:  
+    - 172.31.14.90
+  tasks:
+    - name: creating directory /tmp/test07
+      file:
+        path: /tmp/test07
+        state: touch
+        mode: '0777'
+        owner: manage
+
+    - name:  copy file  /etc/fstab to /tmp/cpfstab
+      copy: 
+        src: /etc/fstab
+        dest: /tmp/cpfstab
+        mode: '0444'
+
+- name: configuring a webserver
+  hosts:  
+    - 172.31.0.228
+  tasks:  
+    - name: installing httpd and vsftpd
+      yum:  
+        name:
+          - httpd
+          - vsftpd
+        state: present
+
+    - name:  start httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      
+    - name: start vsftpd service
+      service:
+        name: vsftpd
+        state: started  
+        enabled: yes
