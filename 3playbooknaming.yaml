@@ -1,9 +1,9 @@
 ---
-- name: testing basic playbook with playbook level naming with install and start apache2
+- name: testing basic playbook with playbook level naming with install and start httpd
   hosts:  
     - 172.31.14.90    
   tasks:  
-    - name: creatinf file in /tmp/apahce2
+    - name: creating   file in /tmp/apahce2
       file:
         path: /tmp/apache2
         state: touch
@@ -12,11 +12,11 @@
       
     - name: installing apache2 package
       yum:  
-        name: apache2
+        name: httpd
         state: present
       
     - name: starting the apache2 service
       service: 
-        name: apache2
+        name: httpd
         state: started
         enabled: yes
