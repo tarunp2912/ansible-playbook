@@ -1,0 +1,17 @@
+---
+- name: installing vsftpd
+  yum:    
+    name: vsftpd
+    state: present
+
+- name: starting vsftpd service
+  service:
+    name: vsftpd
+    state: started
+    enabled: yes
+
+- name: creting shared directory in /tmp/vsftpd.txt
+  file:
+    path: /tmp/vsftpd.txt
+    state: directory
+    mode: '0777'
