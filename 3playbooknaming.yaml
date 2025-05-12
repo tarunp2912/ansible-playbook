@@ -10,12 +10,12 @@
         mode: '0755'
         owner: manage
       
-    - name: installing apache2 package
+    - name: installing httpd package
       yum:  
         name: httpd
         state: present
       
-    - name: starting the apache2 service
+    - name: starting the httpd service
       service: 
         name: httpd
         state: started
