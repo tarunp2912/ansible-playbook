@@ -4,9 +4,9 @@
   tasks: 
     - name: creating directory /tmp/jkl
       file:
-        - path: /tmp/jkl
-          state: directory
-          mode: 777
+        path: /tmp/jkl
+        state: directory
+        mode: 777
 
     - name: copy /etc/fstab to /tmp/cpfstap
       copy:
