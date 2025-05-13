@@ -10,4 +10,4 @@
       file:
         path: /tmp/test07
         state: directory
-        mode: '0777''
+        mode: '0777'
