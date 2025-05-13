@@ -3,8 +3,8 @@
   hosts:  
     - 172.31.14.90
     - 172.31.0.228
-  # user:
-  # become:
+  user: test
+  become: no
   tasks:  
     - name: create directory in /tmp/test07
       file:
