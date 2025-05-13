@@ -1,0 +1,13 @@
+---
+- name: create playbook with different user
+  hosts:  
+    - 172.31.14.90
+    - 172.31.0.228
+  # user:
+  # become:
+  tasks:  
+    - name: create directory in /tmp/test07
+      file:
+        path: /tmp/test07
+        state: directory
+        mode: '0777''
