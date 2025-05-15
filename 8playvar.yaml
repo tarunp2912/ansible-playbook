@@ -1,0 +1,24 @@
+---
+- name: example of playbook level variable
+  hosts:
+    - 172.31.14.90
+    - 172.31.0.228
+  vars:
+      us: tttt
+      st: present
+      ppwd: redhat
+      pack: autofs
+
+  tasks:
+    - name: creating usesr  
+      user:
+        name: "{{ us }}"
+        state: "{{ st }}"
+        password: "{{ ppwd | password_hash('sha512')}}"
+        uid : 2000
+      
+    - name: installing package
+      yum : 
+        name: "{{ pack }}"
+        state: "{{ st }}"
+        

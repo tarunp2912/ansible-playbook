@@ -6,8 +6,8 @@
       user:
         name: "{{ us }}"
         state: "{{ st }}"
-        password: "{{ pass }}"
-        # password: "{{ pass | password_hash('sha512')}}"
+        # password: "{{ pass }}"
+        password: "{{ pass | password_hash('sha512')}}"
 
     - name: installing package
       yum:
