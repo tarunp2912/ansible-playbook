@@ -1,8 +1,6 @@
 ---
 - name: example of command line variable
-- hosts:  
-    - 172.31.14.90
-    - 172.31.0.228
+- hosts:  all
   tasks:  
     - name: create user
       user:
