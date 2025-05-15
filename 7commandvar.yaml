@@ -1,6 +1,6 @@
 ---
 - name: example of command line variable
-- hosts:  all
+  hosts:  all
   tasks:  
     - name: create user
       user:
