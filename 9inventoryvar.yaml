@@ -1,0 +1,16 @@
+---
+- name: example of inventory level variable
+  hosts: all
+  tasks:  
+    - name: create directory
+      file:
+        path: "{{ webroot }}"
+        state: directory
+
+    - name: show webroot value
+      debug:
+        msg: "{{ webroot }}"
+
+# in /home/controller/data/inventory
+# 172.31.14.90  webroot=/tmp/tp
+# 172.31.0.228  webroot=/mnt/tp
