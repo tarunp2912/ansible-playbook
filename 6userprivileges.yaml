@@ -4,7 +4,7 @@
     - 172.31.14.90
     - 172.31.0.228
   user: test
-  # become: 
+  become: no
   tasks:  
     - name: create directory in /tmp/test07
       file:
