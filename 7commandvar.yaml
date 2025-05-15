@@ -1,0 +1,17 @@
+---
+- name: example of command line variable
+- hosts:  
+    - 172.31.14.90
+    - 172.31.0.228
+  tasks:  
+    - name: create user
+      user:
+        name: "{{ us }}"
+        state: "{{ st }}"
+        password: "{{ pass }}"
+        # password: "{{ pass | password_hash('sha512')}}"
+
+    - name: installing package
+      yum:
+        name: "{{ pack }}"
+        state: "{{ st }}"
