@@ -1,0 +1,31 @@
+---
+- name: example of prompt variable
+  hosts:  all
+  vars_prompt:
+    - name: us
+      prompt: "Enter user name"
+      private: no
+    
+    - name: ppwd
+      prompt: "Enter password for user"
+      private: yes
+
+    - name: pack
+      prompt: "Enter package name "
+      private: no
+
+    - name: st
+      prompt: "Enter state"
+      private: no
+
+  tasks:  
+    - name: crete user
+      user:
+        name: "{{us}}"
+        password: "{{ppwd | password_hash('sha512')}}"
+        state: "{{st}}"
+
+    - name: isntall package
+      yum:
+        name: "{{pack}}"
+        state: "{{st}}"
