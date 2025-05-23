@@ -1,0 +1,18 @@
+---
+- name: define variable in different file
+  hosts: all
+  vars_files:
+    - /home/controller/ansible-playbook/11DifferentFileVar/vars.yaml
+
+  tasks:
+    - name: crate user account
+      user:
+        name: "{{us}}"
+        password: "{{ppwd | password_hash('sha512')}}"
+        state: "{{st}}"
+        remove: yes
+
+    - name: isntall package
+      yum:  
+        name: "{{pack}}"
+        state: "{{st}}"
