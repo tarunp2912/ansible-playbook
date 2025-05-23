@@ -1,6 +1,11 @@
 ---
 - name: define variable in different file
   hosts: all
+  vars_prompt:
+    - name: st
+      prompt: "Enter state"
+      private: no
+      
   vars_files:
     - /home/controller/ansible-playbook/11DifferentFileVar/vars.yaml
 
