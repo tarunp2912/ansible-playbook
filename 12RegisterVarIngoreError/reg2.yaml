@@ -1,0 +1,10 @@
+---
+- name: example of register variable
+  hosts:  all
+  tasks:  
+    - name: check available disk
+      command: lsblk
+      register: disk
+    
+    - name: show output of command
+      debug: var=disk
