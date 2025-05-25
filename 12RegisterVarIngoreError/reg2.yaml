@@ -7,4 +7,7 @@
       register: disk
     
     - name: show output of command
-      debug: var=disk
+      debug:
+        msg:
+          - "command output: {{disk.stdout}}" 
+          - " return code: {{disk.rc}}"
