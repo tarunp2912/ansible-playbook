@@ -1,0 +1,10 @@
+---
+- name: example of register varible
+  hosts: all
+  tasks:
+    - name: show cpu load
+      command: uptime
+      register: cpu
+
+    - name: show output of coomand
+      debug: var=cpu
