@@ -1,6 +1,7 @@
 ---
 - name: example of ignore error
   hosts: all
+  ignore_errors: yes
   tasks:  
     - name:  show cpu load
       command: uptime
