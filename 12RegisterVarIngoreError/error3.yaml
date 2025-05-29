@@ -17,7 +17,7 @@
         state: present
 
     - name: service started
-      services:
+      service :
         name: vsftpd
         state: started
         enabled: yes
