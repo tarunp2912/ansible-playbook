@@ -1,0 +1,21 @@
+---
+- name: example of register variable
+  hosts: all
+  ignor_errors: yes
+  tasks:
+    - name: system uptime
+      command: uptimes # here  we have make mistake
+      register: up
+
+    - name: system hostname
+      command: hostname
+      register: host
+
+    - name: creet file in /tmp
+      file:
+        path: /tmp/{{host.stdout}}
+        state: touch
+        mode: 0700
+
+    - debug: var=up.stdout
+    - debug: var=host.stdout
