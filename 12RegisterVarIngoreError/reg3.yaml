@@ -1,7 +1,7 @@
 ---
 - name: example of register variable
   hosts: all
-  ignor_errors: yes
+  ignore_errors: yes
   tasks:
     - name: system uptime
       command: uptimes # here  we have make mistake
