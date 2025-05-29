@@ -1,0 +1,31 @@
+--- 
+- name: ignore error condition check
+  hosts: 172.31.0.228
+  ignore_errors: yes
+  tasks:
+    - name: show cpu uptime
+      command: uptime
+      register: up
+    
+    - name: command output
+      debug:
+        msg: "show cpu uptime {{up.stdout}}"
+
+    - name: installd vsftpd
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: service started
+      services:
+        name: vsftpd
+        state: started
+        enabled: yes
+
+    - name: show status of vsftpd
+      command: systemctl status vsftpd
+      register: status
+
+    - name: show status
+      debug:
+        msg: "status of vsftpd {{status.stdout}}"
