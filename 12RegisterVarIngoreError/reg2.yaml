@@ -9,5 +9,5 @@
     - name: show output of command
       debug:
         msg:
-          - "command output: {{disk.stdout}}" 
+          - "command output: {{disk.stdout_lines}}" 
           - " return code: {{disk.rc}}"
