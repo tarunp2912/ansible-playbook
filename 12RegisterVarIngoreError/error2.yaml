@@ -16,6 +16,7 @@
         path: /tmp/{{date.stdout}}
         state: directory
 
+    - name: show debug info
       debug:
         msg:  
           - "return code of date: {{date.rc}}"
