@@ -1,7 +1,7 @@
 ---
 - name: example of ignore error 2
   hosts:  all
-  igonre_errors: yes
+  ignore_errors: yes
   tasks:
     - name: print date
       shell: date +%F
