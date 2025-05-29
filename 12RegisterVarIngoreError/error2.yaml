@@ -1,0 +1,23 @@
+---
+- name: example of ignore error 2
+  hosts:  all
+  igonre_errors: yes
+  tasks:
+    - name: print date
+      shell: date +%F
+      register: date
+
+    - name: list of all data in /var
+      command:  ls -ll /var
+      register: var
+
+    - name: create directory
+      file:
+        path: /tmp/{{date.stdout}}
+        state: directory
+
+      debug:
+        msg:  
+          - "return code of date: {{date.rc}}"
+          - "return code of date: {{var.rc}}"
+          - "output of date: {{date.stdout}}"

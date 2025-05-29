@@ -4,7 +4,7 @@
   ignore_errors: yes
   tasks:  
     - name:  show cpu load
-      command: uptime
+      command: uptimes
       register: up
 
     - name: show output of command
