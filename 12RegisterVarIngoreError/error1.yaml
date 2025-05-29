@@ -1,0 +1,11 @@
+---
+- name: example of ignore error
+  hosts: all
+  tasks:  
+    - name:  show cpu load
+      command: uptime
+      register: up
+
+    - name: show output of command
+      debug:
+        msg: "show cpu load: {{up.stdout_lines}}"
